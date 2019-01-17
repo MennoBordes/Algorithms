@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{F73DDC47-49E9-4B26-BB06-ADCA12D950AB}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>OpenSpeelkaarten</RootNamespace>
+    <AssemblyName>OpenSpeelkaarten</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>OpenSpeelkaarten.Program</StartupObject>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Comparators\CardComparator.cs" />
+    <Compile Include="Comparators\IComparator.cs" />
+    <Compile Include="Comparators\IntComparator.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Searchers\List\ListSearch.cs" />
+    <Compile Include="Searchers\SingleLinkedList\SingleLinkedListSearch.cs" />
+    <Compile Include="Sorters\List\ListSort.cs" />
+    <Compile Include="Sorters\SingleLinkedList\SingleLinkedListSort.cs" />
+    <Compile Include="Structures\Cards\AbsCard.cs" />
+    <Compile Include="Structures\Cards\Card.cs" />
+    <Compile Include="Structures\Cards\ICard.cs" />
+    <Compile Include="Structures\Stack\Deck.cs" />
+    <Compile Include="Structures\Nodes\SingledLinkedListNodes\AbsSingleLinkedListNode.cs" />
+    <Compile Include="Structures\Nodes\SingledLinkedListNodes\EmptySLLNode.cs" />
+    <Compile Include="Structures\Nodes\SingledLinkedListNodes\ISingleLinkedListNode.cs" />
+    <Compile Include="Structures\Nodes\SingledLinkedListNodes\SLLNode.cs" />
+    <Compile Include="Structures\Nodes\TreeNodes\AbsTreeNode.cs" />
+    <Compile Include="Structures\Nodes\TreeNodes\ITreeNode.cs" />
+    <Compile Include="Structures\Nodes\TreeNodes\TreeNode.cs" />
+    <Compile Include="Structures\Queue\AbsQueue.cs" />
+    <Compile Include="Structures\Queue\IQueue.cs" />
+    <Compile Include="Structures\Queue\SLLQueue.cs" />
+    <Compile Include="Structures\SLL\AbsSingleLinkedList.cs" />
+    <Compile Include="Structures\SLL\ISingleLinkedList.cs" />
+    <Compile Include="Structures\SLL\SingleLinkedList.cs" />
+    <Compile Include="Structures\Stack\AbsStack.cs" />
+    <Compile Include="Structures\Stack\IStack.cs" />
+    <Compile Include="Structures\Stack\SLLStack.cs" />
+    <Compile Include="Structures\Tree\AbsTree.cs" />
+    <Compile Include="Structures\Tree\ITree.cs" />
+    <Compile Include="Structures\Tree\Tree.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Searchers\Array\ArraySearch.cs" />
+    <Compile Include="Searchers\Array\AbsArraySearch.cs" />
+    <Compile Include="Searchers\ISearch.cs" />
+    <Compile Include="Searchers\List\AbsListSearch.cs" />
+    <Compile Include="Searchers\SingleLinkedList\AbsSingleLinkedListSearch.cs" />
+    <Compile Include="Sorters\Array\ArraySort.cs" />
+    <Compile Include="Sorters\Array\AbsArraySort.cs" />
+    <Compile Include="Sorters\ISort.cs" />
+    <Compile Include="Sorters\List\AbsListSort.cs" />
+    <Compile Include="Sorters\SingleLinkedList\AbsSingleLinkedListSort.cs" />
+    <Compile Include="Tests\CardTests.cs" />
+    <Compile Include="Tests\AbsTests.cs" />
+    <Compile Include="Tests\ITests.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ClassDiagramOpenSpeelkaarten v0.1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.6.1">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.6.1 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
