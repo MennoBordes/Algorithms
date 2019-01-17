@@ -1,12 +1,15 @@
 ﻿using System;
+using execution;
 
 namespace execution
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            Console.WriteLine("Hello World!");
-        }
+    
+      int[] arr = new int[] { 9, 8, 7, 9, 8, 3, 5, 8, 6, 5, 4, 3, 2, 1 };
+      var result = array_example.insertion_sort(arr);
     }
+  }
 }
