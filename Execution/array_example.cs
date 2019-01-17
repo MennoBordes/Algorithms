@@ -57,7 +57,7 @@ namespace execution
       return -1;
     }
 
-    public static int[] add_arrays(int[] A, int[] B)
+    public static int[] merge_sort(int[] A, int[] B)
     {
       var arr1 = insertion_sort(A).ToList();
       var arr2 = insertion_sort(B).ToList();
