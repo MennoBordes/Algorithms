@@ -1,4 +1,5 @@
 using System;
+using System.Linq;
 
 namespace execution
 {
@@ -54,6 +55,50 @@ namespace execution
       }
       // Return -1 as error code
       return -1;
+    }
+
+    public static int[] add_arrays(int[] A, int[] B)
+    {
+      var arr1 = insertion_sort(A).ToList();
+      var arr2 = insertion_sort(B).ToList();
+      int[] C = new int[arr1.Count + arr2.Count];
+      for (int i = 0; i < C.Length; i++)
+      {
+        int smaller = 0;
+        if (arr1.Count > 0)
+        {
+          if (arr2.Count > 0)
+          {
+            if (arr1[0] <= arr2[0] || arr2.Count == 0)
+            {
+              smaller = arr1[0];
+              arr1.Remove(smaller);
+              Console.WriteLine("Value to be added: " + smaller);
+            }
+            else
+            {
+              smaller = arr2[0];
+              arr2.Remove(smaller);
+              Console.WriteLine("Value to be added: " + smaller);
+            }
+          }
+          else
+          {
+            smaller = arr1[0];
+            arr1.Remove(smaller);
+            Console.WriteLine("Value to be added: " + smaller);
+          }
+        }
+        else
+        {
+          smaller = arr2[0];
+          arr2.Remove(smaller);
+          Console.WriteLine("Value to be added: " + smaller);
+        }
+        C[i] = smaller;
+      }
+      Console.WriteLine(string.Join(",", C));
+      return C;
     }
   }
 }
