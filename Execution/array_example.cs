@@ -29,5 +29,31 @@ namespace execution
       Console.WriteLine("The order after sorting: " + string.Join(",", A));
       return A;
     }
+
+    public static int[] reverse_insertion_sort(int[] A)
+    {
+      // Calling the sorting function
+      insertion_sort(A);
+      // Reversing the output
+      Array.Reverse(A);
+      Console.WriteLine("The order after reversing the sort: " + string.Join(",", A));
+      return A;
+    }
+
+    public static int sequential_search(int[] A, int toCheck)
+    {
+      // Loop for the amount of items in the array 
+      for (int i = 0; i < A.Length; i++)
+      {
+        // If the current item matches the search
+        if (A[i] == toCheck)
+        {
+          // Return the index
+          return i;
+        }
+      }
+      // Return -1 as error code
+      return -1;
+    }
   }
 }
