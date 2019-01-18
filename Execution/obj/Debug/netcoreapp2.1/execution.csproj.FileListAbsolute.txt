@@ -9,3 +9,14 @@ A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\e
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\execution\bin\Debug\netcoreapp2.1\execution.pdb
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\execution\obj\Debug\netcoreapp2.1\execution.dll
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\execution\obj\Debug\netcoreapp2.1\execution.pdb
+D:\Documenten\Github\Repositories\Algorithms\Execution\bin\Debug\netcoreapp2.1\execution.deps.json
+D:\Documenten\Github\Repositories\Algorithms\Execution\bin\Debug\netcoreapp2.1\execution.runtimeconfig.json
+D:\Documenten\Github\Repositories\Algorithms\Execution\bin\Debug\netcoreapp2.1\execution.runtimeconfig.dev.json
+D:\Documenten\Github\Repositories\Algorithms\Execution\bin\Debug\netcoreapp2.1\execution.dll
+D:\Documenten\Github\Repositories\Algorithms\Execution\bin\Debug\netcoreapp2.1\execution.pdb
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.csprojAssemblyReference.cache
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.csproj.CoreCompileInputs.cache
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.AssemblyInfoInputs.cache
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.AssemblyInfo.cs
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.dll
+D:\Documenten\Github\Repositories\Algorithms\Execution\obj\Debug\netcoreapp2.1\execution.pdb
