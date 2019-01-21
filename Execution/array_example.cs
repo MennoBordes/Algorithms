@@ -57,6 +57,21 @@ namespace Arrays
       return -1;
     }
 
+    public static void bubble_sort(int[] array)
+    {
+      for (int i = 0; i < array.Length; i++)
+      {
+        for (int j = array.Length; j > i + 1; j--)
+        {
+          if (array[j - 1] < array[j - 2])
+          {
+            var temp = array[j-1];
+            array[j - 1] = array[j - 2];
+            array[j - 2] = temp;
+          }
+        }
+      }
+    }
     public static void merge_sort(int[] array)
     {
       // calls the sorting function with the outer bounds provided
