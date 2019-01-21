@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Linq;
+using System.Collections;
+using System.Collections.Generic;
 
 using Arrays;
-
+using lists;
 namespace execution
 {
   class Program
@@ -16,8 +18,13 @@ namespace execution
       // var result = array_example.sequential_search(arr, 5);      // Calling the search function, which returns the index of the value
       // array_example.bubble_sort(arr);                            // Calling the bubble sort function
       // array_example.merge_sort(arr);                             // Calling the merge sort function
-      Console.WriteLine(string.Join(",", arr));
-      Console.WriteLine(string.Join(",", arr));
+      // Console.WriteLine(string.Join(",", arr));
+      // Console.WriteLine(string.Join(",", arr));
+      LinkedList<string> names = new LinkedList<string>();
+      names.AddLast("naam1");
+      names.AddLast("naam2");
+      names.AddLast("naam3");
+      list_example.list_search(names, 2);
     }
   }
 }
