@@ -57,97 +57,52 @@ namespace execution
       return -1;
     }
 
-    public static int[] merge_sort(int[] A, int[] B)
+    public static void merge_sort(int[] array)
     {
-      var arr1 = insertion_sort(A).ToList();
-      var arr2 = insertion_sort(B).ToList();
-      int[] C = new int[arr1.Count + arr2.Count];
-      for (int i = 0; i < C.Length; i++)
+      merge_sort(array, 0, array.Length - 1);
+    }
+    public static void merge_sort(int[] array, int low, int top)
+    {
+      if (low < top)
       {
-        int smaller = 0;
-        if (arr1.Count > 0)
+        int middle = (low + top) / 2;
+        merge_sort(array, low, middle);
+        merge_sort(array, middle + 1, top);
+        Merge(array, low, middle, top);
+      }
+    }
+    public static void Merge(int[] array, int left, int middle, int right)
+    {
+      var n1 = middle - left + 1;
+      var n2 = right - middle;
+      int[] L = new int[n1 + 1];
+      int[] R = new int[n2 + 1];
+      for (int i = 0; i < n1; i++)
+      {
+        L[i] = array[left + i];
+      }
+      for (int j = 0; j < n2; j++)
+      {
+        R[j] = array[middle + j + 1];
+      }
+      L[n1] = int.MaxValue;
+      R[n2] = int.MaxValue;
+
+      int st = 0;
+      int sn = 0;
+
+      for (int Loop = left; Loop < right + 1; Loop++)
+      {
+        if (L[st] <= R[sn])
         {
-          if (arr2.Count > 0)
-          {
-            if (arr1[0] <= arr2[0] || arr2.Count == 0)
-            {
-              smaller = arr1[0];
-              arr1.Remove(smaller);
-              Console.WriteLine("Value to be added: " + smaller);
-            }
-            else
-            {
-              smaller = arr2[0];
-              arr2.Remove(smaller);
-              Console.WriteLine("Value to be added: " + smaller);
-            }
-          }
-          else
-          {
-            smaller = arr1[0];
-            arr1.Remove(smaller);
-            Console.WriteLine("Value to be added: " + smaller);
-          }
+          array[Loop] = L[st];
+          st++;
         }
         else
         {
-          smaller = arr2[0];
-          arr2.Remove(smaller);
-          Console.WriteLine("Value to be added: " + smaller);
+          array[Loop] = R[sn];
+          sn++;
         }
-        C[i] = smaller;
-      }
-      Console.WriteLine(string.Join(",", C));
-      return C;
-    }
-
-    public static void MergeSort(int[] input, int low, int high)
-    {
-      if (low < high)
-      {
-        int middle = (low / 2) + (high / 2);
-        MergeSort(input, low, middle);
-        MergeSort(input, middle + 1, high);
-        Merge(input, low, middle, high);
-      }
-    }
-    public static void MergeSort(int[] input)
-    {
-      MergeSort(input, 0, input.Length - 1);
-    }
-    private static void Merge(int[] input, int low, int middle, int high)
-    {
-      int left = low;
-      int right = middle + 1;
-      int[] temp = new int[(high - low) + 1];
-      int tempIndex = 0;
-
-      while ((left <= middle) && (right <= high))
-      {
-        if (input[left] < input[right])
-        {
-          temp[tempIndex] = input[left];
-          left += 1;
-        }
-        else
-        {
-          temp[tempIndex] = input[right];
-          right += 1;
-        }
-        tempIndex += 1;
-      }
-      if(left <= middle)
-      {
-        while (left <= middle)
-        {
-            temp[tempIndex] = input[right];
-            right +=1;
-            tempIndex += 1;
-        }
-      }
-      for (int i = 0; i < temp.Length; i++)
-      {
-          input[low + 1] = temp[i];
       }
     }
   }
