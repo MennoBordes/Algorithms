@@ -1,7 +1,7 @@
 using System;
 using System.Linq;
 
-namespace execution
+namespace Arrays
 {
   class array_example
   {
@@ -59,15 +59,20 @@ namespace execution
 
     public static void merge_sort(int[] array)
     {
+      // calls the sorting function with the outer bounds provided
       merge_sort(array, 0, array.Length - 1);
     }
     public static void merge_sort(int[] array, int low, int top)
     {
       if (low < top)
       {
+        // create a middle from the sum of the low and the top
         int middle = (low + top) / 2;
+        // recursively call itself
         merge_sort(array, low, middle);
+        // recursively call itself
         merge_sort(array, middle + 1, top);
+        // Call the merge function, providing positions
         Merge(array, low, middle, top);
       }
     }
@@ -75,32 +80,40 @@ namespace execution
     {
       var n1 = middle - left + 1;
       var n2 = right - middle;
-      int[] L = new int[n1 + 1];
-      int[] R = new int[n2 + 1];
+      // create empty arrays with their amount set
+      int[] LeftArray = new int[n1 + 1];
+      int[] RightArray = new int[n2 + 1];
+      // fill the left array with relevant data
       for (int i = 0; i < n1; i++)
       {
-        L[i] = array[left + i];
+        LeftArray[i] = array[left + i];
       }
+      // fill the right array with relevant data
       for (int j = 0; j < n2; j++)
       {
-        R[j] = array[middle + j + 1];
+        RightArray[j] = array[middle + j + 1];
       }
-      L[n1] = int.MaxValue;
-      R[n2] = int.MaxValue;
+      // set the final entry of the arrays to "infinite" 
+      LeftArray[n1] = int.MaxValue;
+      RightArray[n2] = int.MaxValue;
 
       int st = 0;
       int sn = 0;
-
+      // only run for the amount of items present + 1
       for (int Loop = left; Loop < right + 1; Loop++)
       {
-        if (L[st] <= R[sn])
+        // if the value at the index of the left array is lower than 
+        // the value at the index of the right array
+        if (LeftArray[st] <= RightArray[sn])
         {
-          array[Loop] = L[st];
+          // set the value of the left array to the index of the main array
+          array[Loop] = LeftArray[st];
           st++;
         }
         else
         {
-          array[Loop] = R[sn];
+          // set the value of the right array to the index of the main array
+          array[Loop] = RightArray[sn];
           sn++;
         }
       }
