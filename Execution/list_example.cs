@@ -5,6 +5,48 @@ using System.Collections.Generic;
 
 namespace lists
 {
+  public class DoubleLinkedNode<T>
+  {
+    public DoubleLinkedNode<T> Prev;
+    public DoubleLinkedNode<T> Next;
+    public T Value;
+    public DoubleLinkedNode(DoubleLinkedNode<T> prev, DoubleLinkedNode<T> next, T value)
+    {
+      Prev = prev;
+      Next = next;
+      Value = value;
+    }
+  }
+
+  public class DoubleLinkedList<T>
+  {
+    public DoubleLinkedNode<T> FirstNode;
+    public DoubleLinkedNode<T> LastNode;
+  }
+  class double_list_example
+  {
+    public static void callable()
+    {
+      var list = new DoubleLinkedList<int>();
+      InsertBeginning(list, 50);
+      InsertBeginning(list,15);
+
+    }
+    public static void InsertBeginning<T>(DoubleLinkedList<T> list, T newValue)
+    {
+      if (list.FirstNode == null)
+      {
+        list.FirstNode = new DoubleLinkedNode<T>(null, null, newValue);
+      }
+      else
+      {
+        var current = list.FirstNode;
+        list.FirstNode = new DoubleLinkedNode<T>(current.Prev, current, newValue);
+        current.Prev = list.FirstNode;
+      }
+    }
+  }
+
   // Creating the type which contains the data
   public class Node<T> where T : IComparable
   {
@@ -24,7 +66,7 @@ namespace lists
     // The properties of the list
     public Node<T> Start;
   }
-  class list_example
+  class single_list_example
   {
     public static void callable()
     {

@@ -20,7 +20,8 @@ namespace execution
       // array_example.merge_sort(arr);                             // Calling the merge sort function
       // Console.WriteLine(string.Join(",", arr));
       // Console.WriteLine(string.Join(",", arr));
-      list_example.callable();
+      // single_list_example.callable();                               // single linked list call
+      double_list_example.callable();
     }
   }
 }
