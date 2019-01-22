@@ -29,13 +29,30 @@ namespace lists
     public static void callable()
     {
       var list = new SortedLinkedList<int>();  // instantiate a new list
-      List_insert(list,5);                     // Add data(int) to the list
-      List_insert(list,20);
-      List_insert(list,2);
-      List_insert(list,8);
-      List_insert(list,6);
-      Console.WriteLine(list);
-      
+      List_insert(list, 5);                    // Add data(int) to the list
+      List_insert(list, 20);
+      List_insert(list, 2);
+      List_insert(list, 8);
+      List_insert(list, 6);
+      var res = List_search(list, 1);       // Search for the node with a given value
+      Console.WriteLine(res.Value);
+
+    }
+    public static Node<int> List_search(SortedLinkedList<int> list, int toFind)
+    {
+      var temp = list.Start;
+      while (temp != null && temp.Value != toFind)
+      {
+        temp = temp.Next;
+      }
+      // if temp is not found
+      if (temp == null)
+      {
+        // return a new node with no next node, and the minimum value
+        return new Node<int>(int.MinValue, null);
+      }
+      // return the found node
+      return temp;
     }
     public static void List_insert(SortedLinkedList<int> list, int toInsert)
     {
@@ -48,7 +65,7 @@ namespace lists
       var x = list.Start;
       while (x.Next != null && x.Next.Value <= toInsert)
       {
-          x = x.Next;
+        x = x.Next;
       }
       x.Next = new Node<int>(toInsert, x.Next);
       return;
