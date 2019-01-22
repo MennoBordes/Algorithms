@@ -29,20 +29,36 @@ namespace lists
     {
       var list = new DoubleLinkedList<int>();
       InsertBeginning(list, 50);
-      InsertBeginning(list,15);
+      InsertBeginning(list, 15);
+      InsertBeginning(list, 5);
+      InsertLast(list, 55);
+      InsertLast(list, 80);
 
     }
     public static void InsertBeginning<T>(DoubleLinkedList<T> list, T newValue)
     {
       if (list.FirstNode == null)
       {
-        list.FirstNode = new DoubleLinkedNode<T>(null, null, newValue);
+        list.FirstNode = list.LastNode = new DoubleLinkedNode<T>(null, null, newValue);
       }
       else
       {
         var current = list.FirstNode;
         list.FirstNode = new DoubleLinkedNode<T>(current.Prev, current, newValue);
         current.Prev = list.FirstNode;
+      }
+    }
+    public static void InsertLast<T>(DoubleLinkedList<T> list, T newValue)
+    {
+      if(list.LastNode == null)
+      {
+        list.LastNode = list.FirstNode = new DoubleLinkedNode<T>(null, null, newValue);
+      }
+      else
+      {
+        var current = list.LastNode;
+        list.LastNode = new DoubleLinkedNode<T>(current, current.Next, newValue);
+        current.Next = list.LastNode;
       }
     }
   }
