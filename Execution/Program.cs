@@ -20,11 +20,7 @@ namespace execution
       // array_example.merge_sort(arr);                             // Calling the merge sort function
       // Console.WriteLine(string.Join(",", arr));
       // Console.WriteLine(string.Join(",", arr));
-      LinkedList<string> names = new LinkedList<string>();
-      names.AddLast("naam1");
-      names.AddLast("naam2");
-      names.AddLast("naam3");
-      list_example.list_search(names, 2);
+      list_example.callable();
     }
   }
 }
