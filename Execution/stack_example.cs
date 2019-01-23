@@ -11,6 +11,7 @@ namespace stacks
     T Pop();
     T Peek();
     Boolean isEmpty();
+    void PrintStack();
   }
   public class Stack<T> : StackInterface<T>
   {                                       // The items the stack contains
@@ -18,12 +19,12 @@ namespace stacks
     int top;
     T[] stack = new T[MAX];
 
-    public bool isEmpty()
+    public bool isEmpty()                 // To check if the stack is empty or not
     {
       return (top <= 0);
     }
 
-    public T Peek()
+    public T Peek()                       // To look at the top element
     {
       if (top <= 0)
       {
@@ -37,7 +38,7 @@ namespace stacks
       }
     }
 
-    public T Pop()
+    public T Pop()                        // To look at and remove the top element
     {
       if (top <= 0)
       {
@@ -51,8 +52,7 @@ namespace stacks
         return value;
       }
     }
-
-    public bool Push(T data)
+    public bool Push(T data)              // To add an new element to the stack
     {
       if (top >= MAX)
       {
@@ -65,6 +65,23 @@ namespace stacks
         stack[top++] = data;
         // top++;
         return true;
+      }
+    }
+    public void PrintStack()              // To print all items in the stack
+    {
+      if (top < 0)
+      {
+        Console.WriteLine("Stack underflow");
+        return;
+      }
+      else
+      {
+        // Going from the top of the stack back down to 0
+        Console.WriteLine("Items in the stack are: ");
+        for (int i = top - 1; i >= 0; i--)
+        {
+          Console.WriteLine(stack[i]);
+        }
       }
     }
   }
@@ -85,6 +102,7 @@ namespace stacks
       var i2 = integers.Pop();
       integers.Push(112);
       var i3 = integers.Peek();
+      integers.PrintStack();
 
       Stack<string> strings = new Stack<string>();
       strings.Push("HottentottenTentenTentoonstelling");
@@ -95,6 +113,22 @@ namespace stacks
       var s2 = strings.Pop();
       var s3 = strings.Peek();
       strings.Push("Gekte");
+      strings.PrintStack();
+
+      Stack<int> inter = new Stack<int>();
+      inter.Push(3);
+      inter.Push(5);
+      inter.Push(1);
+      inter.Pop();
+      inter.Pop();
+      inter.Push(8);
+      inter.Pop();
+      inter.Pop();
+      inter.Push(2);
+      inter.Push(4);
+      inter.Pop();
+      inter.Push(7);
+      inter.PrintStack();
     }
   }
 }
