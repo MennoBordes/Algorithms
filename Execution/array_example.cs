@@ -5,6 +5,16 @@ namespace Arrays
 {
   class array_example
   {
+    public static void callable()
+    {
+      // Creating an array that has to be sorted
+      int[] arr = new int[] { 3, 41, 52, 26, 38, 57, 9, 49 };
+      var result = insertion_sort(arr);            // Calling the sorting function
+      var result2 = reverse_insertion_sort(arr);   // Calling the reverse sorting function
+      var result3 = sequential_search(arr, 5);     // Calling the search function, which returns the index of the value
+      bubble_sort(arr);                            // Calling the bubble sort function
+      merge_sort(arr);                             // Calling the merge sort function
+    }
     public static int[] insertion_sort(int[] A)
     {
       Console.WriteLine("The order before sorting: " + string.Join(",", A));
