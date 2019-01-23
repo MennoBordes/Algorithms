@@ -9,12 +9,12 @@ namespace lists
   {
     public DoubleLinkedNode<T> Prev;
     public DoubleLinkedNode<T> Next;
-    public T Value;
+    public T Data;
     public DoubleLinkedNode(DoubleLinkedNode<T> prev, DoubleLinkedNode<T> next, T value)
     {
       Prev = prev;
       Next = next;
-      Value = value;
+      Data = value;
     }
   }
 
@@ -27,13 +27,95 @@ namespace lists
   {
     public static void callable()
     {
-      var list = new DoubleLinkedList<int>();
-      InsertBeginning(list, 50);
+      var list = new DoubleLinkedList<int>();   // Initiate a new Double linked list
+      InsertBeginning(list, 50);                // Insert values at the beginning
       InsertBeginning(list, 15);
       InsertBeginning(list, 5);
-      InsertLast(list, 55);
+      InsertLast(list, 55);                     // Insert values at the end
       InsertLast(list, 80);
-
+      // Remove(list, 15);                         // Remove a certain value
+      var res = search(list, 50);
+      InsertBefore(list, res, 20);
+      InsertAfter(list, res, 51);
+    }
+    public static void InsertAfter<T>(DoubleLinkedList<T> list, DoubleLinkedNode<T> node, T newValue)
+    {
+      if (node == null) { return; }
+      if (list.LastNode == null || list.LastNode == node)
+      {
+        InsertLast(list, newValue);
+      }
+      var temp = list.FirstNode;
+      while (temp.Next != null)
+      {
+        if (temp.Next == node)
+        {
+          var place = temp.Next.Next;
+          place = new DoubleLinkedNode<T>(place.Prev, place, newValue);
+          place.Prev.Next = place;
+          place.Next.Prev = place;
+          return;
+        }
+        temp = temp.Next;
+      }
+      return;
+    }
+    public static void InsertBefore<T>(DoubleLinkedList<T> list, DoubleLinkedNode<T> node, T newValue)
+    {
+      if (node == null) { return; }
+      if (list.FirstNode == null || list.FirstNode == node)
+      {
+        InsertBeginning(list, newValue);
+      }
+      var temp = list.FirstNode;
+      while (temp.Next != null)
+      {
+        if (temp.Next == node)
+        {
+          var current = temp;
+          temp = new DoubleLinkedNode<T>(current, temp.Next, newValue);
+          temp.Next.Prev = temp;
+          temp.Prev.Next = temp;
+          return;
+        }
+        temp = temp.Next;
+      }
+      return;
+    }
+    public static DoubleLinkedNode<T> search<T>(DoubleLinkedList<T> list, T value)
+    {
+      var node = list.FirstNode;
+      while (node != null)
+      {
+        if (node.Data.Equals(value))
+        {
+          return node;
+        }
+        node = node.Next;
+      }
+      return null;
+    }
+    public static void Remove<T>(DoubleLinkedList<T> list, T value)
+    {
+      if (list.FirstNode == null)
+      {
+        return;
+      }
+      else if (list.FirstNode.Data.Equals(value))
+      {
+        list.FirstNode = list.FirstNode.Next;
+      }
+      var temp = list.FirstNode;
+      while (temp.Next != null)
+      {
+        if (temp.Next.Data.Equals(value))
+        {
+          temp.Next = temp.Next.Next;
+          return;
+        }
+        temp = temp.Next;
+      }
+      return;
     }
     public static void InsertBeginning<T>(DoubleLinkedList<T> list, T newValue)
     {
@@ -50,7 +132,7 @@ namespace lists
     }
     public static void InsertLast<T>(DoubleLinkedList<T> list, T newValue)
     {
-      if(list.LastNode == null)
+      if (list.LastNode == null)
       {
         list.LastNode = list.FirstNode = new DoubleLinkedNode<T>(null, null, newValue);
       }
