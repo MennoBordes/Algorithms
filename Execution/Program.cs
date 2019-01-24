@@ -7,6 +7,7 @@ using Arrays;
 using lists;
 using stacks;
 using Ques;
+using Hashers;
 
 namespace execution
 {
@@ -18,7 +19,8 @@ namespace execution
       // single_list_example.callable();       // single linked list call
       // double_list_example.callable();       // double linked list call
       // stack_example.callable();             // stack call   
-      Queue_example.callable();             // Queue call
+      // Queue_example.callable();             // Queue call
+      caller.callable();                    // hash calls
     }
   }
 }
