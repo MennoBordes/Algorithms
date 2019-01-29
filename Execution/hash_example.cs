@@ -5,7 +5,7 @@ using System.Collections.Generic;
 // https://simpledevcode.wordpress.com/2015/07/07/hash-tables-tutorial-c-c-java/
 namespace Hashers
 {
-  class caller
+  class hashCallable
   {
     public static void callable()
     {

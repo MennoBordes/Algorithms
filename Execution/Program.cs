@@ -8,6 +8,7 @@ using lists;
 using stacks;
 using Ques;
 using Hashers;
+using BinarySearch;
 
 namespace execution
 {
@@ -20,7 +21,8 @@ namespace execution
       // double_list_example.callable();       // double linked list call
       // stack_example.callable();             // stack call   
       // Queue_example.callable();             // Queue call
-      caller.callable();                    // hash calls
+      // hashCallable.callable();              // hash calls
+      binaryCallable.callable();
     }
   }
 }

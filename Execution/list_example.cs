@@ -35,8 +35,9 @@ namespace lists
       InsertLast(list, 80);
       // Remove(list, 15);                         // Remove a certain value
       var res = search(list, 50);
-      InsertBefore(list, res, 20);
+      // InsertBefore(list, res, 20);
       InsertAfter(list, res, 51);
+      InsertAfter(list, res, 15);
     }
     public static void InsertAfter<T>(DoubleLinkedList<T> list, DoubleLinkedNode<T> node, T newValue)
     {
