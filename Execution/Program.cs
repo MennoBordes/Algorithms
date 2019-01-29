@@ -10,6 +10,7 @@ using Ques;
 using Hashers;
 using BinarySearch;
 using Dijkstra;
+using Floyd;
 
 namespace execution
 {
@@ -24,7 +25,8 @@ namespace execution
       // Queue_example.callable();             // Queue call
       // hashCallable.callable();              // hash calls
       // binaryCallable.callable();
-      dijkstraCallable.callable();
+      // dijkstraCallable.callable();
+      FloydCallable.callable();
     }
   }
 }
