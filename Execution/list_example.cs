@@ -41,7 +41,10 @@ namespace lists
     }
     public static void InsertAfter<T>(DoubleLinkedList<T> list, DoubleLinkedNode<T> node, T newValue)
     {
-      if (node == null) { return; }
+      if (node == null)
+      {
+        return;
+      }
       if (list.LastNode == null || list.LastNode == node)
       {
         InsertLast(list, newValue);

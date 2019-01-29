@@ -186,7 +186,8 @@ namespace SampleExam
         {
           if (distance[v] < min)
           {
-            // TODO: Ex 5.3 
+						// TODO: Ex 5.3 
+						min = distance[v];
           }
         }
 
@@ -194,7 +195,7 @@ namespace SampleExam
         List<int> neighbors = new List<int>();
         for (int i = 0; i < Count; i++)
         {
-          if (adjacencyMatrix[minIndex, i] < Double.PositiveInfinity)
+          if (adjacencyMatrix[minIndex, i] < double.PositiveInfinity)
             neighbors.Add(i);
         }
 
@@ -203,7 +204,9 @@ namespace SampleExam
           double alternativeDist = distance[minIndex] + adjacencyMatrix[minIndex, n];
           if (alternativeDist < distance[n])
           {
-            // TODO: Ex 5.4
+						// TODO: Ex 5.4
+						distance[n] = alternativeDist;
+						prev[n] = minIndex;
           }
         }
       }
