@@ -197,6 +197,7 @@ namespace SampleExam
       {
         Console.WriteLine("Your code gave the following exception: " + e.Message);
       }
+            Console.ReadLine();
     }
   }
 }

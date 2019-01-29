@@ -11,3 +11,16 @@ A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\S
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.csproj.CopyComplete
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.dll
 A:\Red Darkness\Documents\Documenten\Github\Repositories\Algorithms\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.pdb
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Sample.deps.json
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Sample.runtimeconfig.json
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Sample.runtimeconfig.dev.json
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Sample.dll
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Sample.pdb
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\bin\Debug\netcoreapp2.1\Tester.dll
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.csprojAssemblyReference.cache
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.csproj.CoreCompileInputs.cache
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.AssemblyInfoInputs.cache
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.AssemblyInfo.cs
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.csproj.CopyComplete
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.dll
+D:\Documenten\Github\Repositories\Algorithms\Sample_Exam\Sample\obj\Debug\netcoreapp2.1\Sample.pdb
