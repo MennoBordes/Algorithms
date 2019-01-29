@@ -20,11 +20,29 @@ namespace SampleExam
 
       if (list.Last == node)
       {
-        // TODO: Ex 1.1 
+				// TODO: Ex 1.1 
+				list.Last = newNode;
       }
       else
       {
-        // TODO: Ex 1.2
+				// TODO: Ex 1.2
+				newNode.Next.Prev = newNode;
+				//var current = list.First;
+				//while (current.Next != null)
+				//{
+				// if(current.Next == node)
+				//	{
+				//		var placeToInsert = current.Next.Next;
+				//		placeToInsert = new DoubleNode<int>(value, placeToInsert.Prev, placeToInsert);
+				//		placeToInsert.Prev.Next = placeToInsert;
+				//		placeToInsert.Next.Prev = placeToInsert;
+				//		//var placeAfter = placeToInsert;
+				//		//placeToInsert = new DoubleNode<int>(value, node, node.Next);
+				//		//placeAfter.Prev = placeToInsert;
+				//		return;
+				//	}
+				//	current = current.Next;
+				//}
       }
     }
 
@@ -35,7 +53,7 @@ namespace SampleExam
     static int getIndex(int key, int size)
     {
       int hashCode = Math.Abs(key.GetHashCode());
-      int index = 0; //TODO: Ex 2.1 REPLACE 0 WITH YOUR CODE
+      int index = hashCode % size; //TODO: Ex 2.1 REPLACE 0 WITH YOUR CODE
       return index;
     }
 
@@ -50,30 +68,30 @@ namespace SampleExam
       var arraySize = table.buckets.Length;
       int index = getIndex(key, arraySize);
       var values = table.buckets;
-      if (values[index] == null)
-        values[index] = null;  //TODO: Ex 2.2 PLACEHOLDER: REPLACE null WITH YOUR CODE
-      else
-      {
-        if (values[index].Key.Equals(key))
-        {
-          throw new ArgumentException("Key already exists");
-        }
-        else
-        {
-          // TODO: Ex2.3; potentialIndex = ?
-          var potentialIndex = 0; // PLACEHOLDER: REMOVE AND REPLACE WITH YOUR CODE
+			if (values[index] == null)
+				values[index] = new Entry<int, Person>(key, value);  //TODO: Ex 2.2 PLACEHOLDER: REPLACE null WITH YOUR CODE
+			else
+			{
+				if (values[index].Key.Equals(key))
+				{
+					throw new ArgumentException("Key already exists");
+				}
+				else
+				{
+					// TODO: Ex2.3; potentialIndex = ?
+					var potentialIndex = index; // PLACEHOLDER: REMOVE AND REPLACE WITH YOUR CODE
 
-          while (values[potentialIndex] != null)
-          {
-            potentialIndex++;
-            if (potentialIndex >= arraySize)
-              potentialIndex = 0;
-            if (potentialIndex == index)
-              return;
-          }
-          values[potentialIndex] = null;  //TODO: Ex 2.4 PLACEHOLDER: REPLACE null WITH YOUR CODE
-        }
-      }
+					while (values[potentialIndex] != null)
+					{
+						potentialIndex++;
+						if (potentialIndex >= arraySize)
+							potentialIndex = 0;
+						if (potentialIndex == index)
+							return;
+					}
+					values[potentialIndex] = new Entry<int, Person>(key, value);  //TODO: Ex 2.4 PLACEHOLDER: REPLACE null WITH YOUR CODE
+				}
+			}
     }
 
     /// <summary>
@@ -84,6 +102,8 @@ namespace SampleExam
     {
       var somethingChanged = true;
       // TODO: Ex3.1; while( ? )
+			//while(somethingChanged)
+			while(somethingChanged != false)
       {
         somethingChanged = false;
         for (int i = 0; i < array.Length - 1; i++)
@@ -91,7 +111,9 @@ namespace SampleExam
           if (array[i].CompareTo(array[i + 1]) > 0)
           {
             var temp = array[i + 1];
-            // TODO: Ex3.2;
+						// TODO: Ex3.2;
+						array[i + 1] = array[i];
+						array[i] = temp;
             somethingChanged = true;
           }
         }
@@ -110,12 +132,13 @@ namespace SampleExam
         throw new Exception("value not found");
 
       if (node.value.CompareTo(value) == 0)
-        return null; // TODO: Ex 4.2 PLACEHOLDER: REPLACE null WITH YOUR CODE
 
-      if (node.value.CompareTo(value) < 0)
-        return null; // TODO: Ex 4.3 PLACEHOLDER: REPLACE null WITH YOUR CODE
+        return node; // TODO: Ex 4.2 PLACEHOLDER: REPLACE null WITH YOUR CODE
 
-      return null; // TODO: Ex 4.4 PLACEHOLDER: REPLACE null WITH YOUR CODE
+			if (node.value.CompareTo(value) < 0)
+				return searchStartingFrom(node.rightChild, value); // TODO: Ex 4.3 PLACEHOLDER: REPLACE null WITH YOUR CODE
+
+			return searchStartingFrom(node.leftChild, value); // TODO: Ex 4.4 PLACEHOLDER: REPLACE null WITH YOUR CODE
     }
 
     /// <summary>
@@ -126,6 +149,8 @@ namespace SampleExam
     /// <returns>the node of the tree containing the value found</returns>
     static TreeNode<int> BSTFind(BSTree<int> tree, int value)
     {
+			return searchStartingFrom(tree.root, value);
+			TreeNode<int> currentNode = tree.root;
       return null; // TODO: Ex 4.1 PLACEHOLDER: REPLACE null WITH YOUR CODE
     }
 
@@ -144,10 +169,12 @@ namespace SampleExam
 
       for (int i = 0; i < Count; i++)
       {
-        // TODO: Ex 5.1; distance[i] = ?
+				// TODO: Ex 5.1; distance[i] = ?
+				distance[i] = double.PositiveInfinity;
         prev[i] = -1;
-        // TODO: Ex 5.2; vertexSet.Add(?);
-      }
+				// TODO: Ex 5.2; vertexSet.Add(?);
+				vertexSet.Add(i);
+			}
 
       distance[source] = 0;
       while (vertexSet.Count > 0)
@@ -197,7 +224,7 @@ namespace SampleExam
       {
         Console.WriteLine("Your code gave the following exception: " + e.Message);
       }
-            Console.ReadLine();
+      Console.ReadLine();
     }
   }
 }
