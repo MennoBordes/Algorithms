@@ -25,8 +25,8 @@ namespace execution
       // Queue_example.callable();             // Queue call
       // hashCallable.callable();              // hash calls
       // binaryCallable.callable();
-      // dijkstraCallable.callable();
-      FloydCallable.callable();
+      dijkstraCallable.callable();
+      // FloydCallable.callable();
     }
   }
 }
