@@ -9,6 +9,7 @@ using stacks;
 using Ques;
 using Hashers;
 using BinarySearch;
+using Dijkstra;
 
 namespace execution
 {
@@ -22,7 +23,8 @@ namespace execution
       // stack_example.callable();             // stack call   
       // Queue_example.callable();             // Queue call
       // hashCallable.callable();              // hash calls
-      binaryCallable.callable();
+      // binaryCallable.callable();
+      dijkstraCallable.callable();
     }
   }
 }
