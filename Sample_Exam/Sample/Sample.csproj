@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="binn\**" />
+    <EmbeddedResource Remove="binn\**" />
+    <None Remove="binn\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Reference Include="Tester">
       <HintPath>..\Libraries\Tester.dll</HintPath>
     </Reference>
