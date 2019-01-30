@@ -45,24 +45,16 @@ namespace lists
       {
         return;
       }
-      if (list.LastNode == null || list.LastNode == node)
+      DoubleLinkedNode<T> newNode = new DoubleLinkedNode<T>(node, node.Next, newValue);
+      node.Next = newNode;
+      if(list.LastNode == node)
       {
-        InsertLast(list, newValue);
+        list.LastNode = newNode;
       }
-      var temp = list.FirstNode;
-      while (temp.Next != null)
+      else
       {
-        if (temp.Next == node)
-        {
-          var place = temp.Next.Next;
-          place = new DoubleLinkedNode<T>(place.Prev, place, newValue);
-          place.Prev.Next = place;
-          place.Next.Prev = place;
-          return;
-        }
-        temp = temp.Next;
+        node.Next.Prev = newNode;
       }
-      return;
     }
     public static void InsertBefore<T>(DoubleLinkedList<T> list, DoubleLinkedNode<T> node, T newValue)
     {
